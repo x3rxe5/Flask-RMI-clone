@@ -8,6 +8,7 @@ load_dotenv(dotenv_path=env_path)
 
 host = os.getenv("host")
 port = int(os.getenv("port"))
+
 buffer = int(os.getenv("buffer_size"))
 msg_code = ""
 msg_data = ""
@@ -61,13 +62,18 @@ def server_start(addr):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-h",action="store",help="for to define Host ")
-    parser.add_argument("-p",action="store",help="for to define Port ")
+    parser.add_argument("-ht",action="store_const",const='127.0.0.1',help="for to define Host ")
+    parser.add_argument("-p",action="store_const",const='9999',help="for to define Port ")
     parser.add_argument("-f",action="store",help="add a function file ")
+    parser.add_argument("-buf",action="store_const",const='1024',help="for to define buffer size")
     parser.add_argument("-c",action="store",help="add a class file")
 
     args = parser.parse_args()
 
-
-    addr = (host,port)
-    server_start(addr)
+    try:
+        addr = (host,port)
+        server_start(addr)
+    except KeyboardInterrupt:
+        sys.exit()
+    except:
+        subprocess.call("python3 server.py -h",shell=True)
