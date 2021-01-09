@@ -1,7 +1,7 @@
 
 /**************** NOTICE **************/
 
-This repo is still going under construction
+This repo is still under construction
 
 
 // FIRST STEP
