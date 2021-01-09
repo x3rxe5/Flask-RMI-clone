@@ -1,4 +1,9 @@
 
+/**************** NOTICE **************/
+
+This repo is still going under construction
+
+
 // FIRST STEP
 
 Please make sure that you have python3 version
