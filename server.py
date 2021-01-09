@@ -1,4 +1,4 @@
-import socket,os,sys
+import socket,os,sys,argparse
 from dotenv import load_dotenv
 from pathlib import Path
 import subprocess
@@ -59,5 +59,15 @@ def server_start(addr):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("-h",action="store",help="for to define Host ")
+    parser.add_argument("-p",action="store",help="for to define Port ")
+    parser.add_argument("-f",action="store",help="add a function file ")
+    parser.add_argument("-c",action="store",help="add a class file")
+
+    args = parser.parse_args()
+
+
     addr = (host,port)
     server_start(addr)
