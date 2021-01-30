@@ -1,22 +1,20 @@
 
-/**************** NOTICE **************/
-
-This repo is still under construction
+# This repo is under construction
 
 
-// FIRST STEP
-
+### First Step
 Please make sure that you have python3 version
 and install all module which is require over here
 
+```
 pip3 install -r requirements.txt
+```
 
 
-
-// SECOND STEP
-
+### Second Step
 
 
+```
 usage: server.py [-h] [-ht] [-p] [-f F] [-buf] [-c C]
 
 optional arguments:
@@ -26,3 +24,4 @@ optional arguments:
   -f F        add a function file
   -buf        for to define buffer size
   -c C        add a class file
+  ```
